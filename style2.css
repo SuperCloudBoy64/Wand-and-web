@@ -1,0 +1,1298 @@
+body {
+  font-family: 'Baskervville', Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  transition: background 0.6s ease-in-out, color 0.6s ease-in-out;
+}
+
+body.dark-mode {
+  background: #111;
+  color: white;
+}
+
+.button {
+  position: relative; /* needed so we can position the skeleton relative to this */
+  text-decoration: none;
+  padding: 16px 64px;
+  color: white;
+  background: linear-gradient(to right, midnightblue 0%, cyan 100%);
+  background-size: 600% auto;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background-position 0.5s ease, color 0.5s ease, transform 0.3s ease;
+  margin: 5% 10%;
+  z-index: 5; /* sits above skeleton */
+}
+
+.button:hover {
+  background-position: right center;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.03);
+}
+
+
+body.dark-mode .button::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* start below the button */
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  width: 120%;
+  height: 150%;
+  background-image: url('skeleton.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 1; /* below the button */
+  transition: opacity 0.9s ease-in-out, transform 0.7s ease;
+}
+
+
+body.dark-mode .button:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-20%);
+}
+
+.animation1 {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+  opacity: 1;
+}
+
+.animation1:hover {
+  font-size: 20px;
+  transform: translateY(-3px);
+  opacity: 0.9;
+
+}
+
+.animation2 {
+  text-decoration: none;
+  padding: 10px 32px;
+  color: black;
+  background-position: left center;
+  background: linear-gradient(to right, greenyellow 0%, forestgreen 100%);
+  background-size: 600% auto;
+  text-align: center;
+  display: inline-flex;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 4em;
+  cursor: pointer;
+  transition: background-position 0.8s ease, color 0.7s ease, transform 0.5s ease;
+  margin: 5% 10%;
+    align-items: center;
+    will-change: transform;
+}
+
+.animation2:hover {
+  background-position: right center;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+
+
+.topnav {
+    display: none;
+}
+
+.header {
+  position: relative;
+  height: 30vh;
+  margin: 0 0 10px 0;
+  overflow: hidden;
+}
+
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.header::before {
+  background-image: url('header1.jpeg');
+  opacity: 1;
+}
+
+
+.header::after {
+  background-image: url('header2.jpeg');
+  opacity: 0;
+}
+
+.header:hover::after {
+  opacity: 1;
+}
+
+body.dark-mode .header {
+  background-image: url('halloweenNight2.jpeg');
+}
+
+body.dark-mode .header::before {
+  background-image: url('halloweenNight2.jpeg');
+  background-position: center;    
+  background-size: cover;            
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 0.9s ease-in-out;
+}
+
+body.dark-mode .header::after {
+  background-image: none;   
+  opacity: 0;
+}
+
+
+
+#navbar {
+  position: sticky; top: 0; z-index: 1000;
+  background: #fff;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 1.5rem;
+  padding: 10px 16px;
+  margin: 20px auto;
+  width: min(100%, 1100px);     
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand { 
+  display: inline-flex; 
+  align-items: center; 
+}
+
+#navbar .witch1 {
+  height: 5.5rem; 
+  width: 4.5rem; 
+  flex: 0 0 auto;
+}
+
+.navlinks {
+  display: flex; 
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
+  gap: 24px; 
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+#navbar a {
+  color: #333; 
+  text-decoration: none; 
+  font-size: 18px; 
+  font-weight: bold;
+  line-height: 1.5;
+  padding: 6px 10px;
+  transition: color .25s ease, text-decoration-color .25s ease;
+}
+
+#navbar a:hover { 
+  text-decoration: underline; 
+  color: lightblue; 
+}
+
+#navbar a:focus-visible { 
+  outline: 3px solid lightblue; 
+  outline-offset: 3px; 
+  border-radius: 8px; 
+}
+
+.contact {
+  background: GreenYellow;
+  color: #000;
+  border: 2px solid #333;
+  border-radius: 4em;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition:
+  transform 400ms cubic-bezier(.22,1,.36,1),
+    box-shadow 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    background-color 400ms ease,
+    padding-right 04s ease,
+    border 0.4s ease;
+  transform-origin: left center;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  display: inline-flex;
+  will-chnage: transform;
+  backface-visibility: hidden;
+  transform: scaleX(1) translateY(0); 
+}
+
+.contact:hover { 
+  transform: scaleX(1.18) translateY(-1px); 
+  box-shadow: 0 6px 14px rgba(0,0,0,.15);
+  background: cadetblue;
+  background-size: 100% 200%;
+  background-position: 0 100%;
+  animation: rise 0.8s ease forwards;
+  padding-right: 60px;
+  border: 5px solid darkgray;
+  
+}
+
+.contact::after {
+  opacity: 0;
+  margin-left: 0.3em;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.contact:hover::after {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+@keyframes rise {
+  to {
+    background-position: 0 0;
+  }
+}
+
+.icon-btn {
+  font-size: 2rem; 
+  background: transparent; 
+  border: none; 
+  cursor: pointer; 
+  color: midnightblue;
+  transition: transform .3s ease
+  box-shadow 0.3s ease;
+  border-radius: 50%;
+  padding: 20px;
+  
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px); 
+}
+
+.icon-btn:focus-visible { 
+  outline: 3px solid lightblue; 
+  border-radius: 8px; 
+}
+
+.icon-btn.active i { 
+  transform: rotate(180deg); 
+}
+
+
+
+
+
+
+
+
+
+.social-icons .fa-facebook-f:hover { color: #1877F2; }  
+.social-icons .fa-twitter:hover { color: #1DA1F2; }     
+.social-icons .fa-instagram:hover { color: #E4405F; }  
+.social-icons .fa-linkedin-in:hover { color: #0077B5; } 
+.social-icons .fa-youtube:hover { color: #FF0000; }
+
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
+  font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+.hero{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.heroPic {
+  background: url('hero1.png') center/cover no-repeat;
+  background-size: contain;
+  height: 60vh;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+body.dark-mode .heroPic {
+  background: url('darkHero1.png');
+  background-size: contain;
+  height: 60vh;
+  width: 80vw;
+  background-repeat: no-repeat;
+  margin-left: 5%;
+}
+
+body.dark-mode .heroPic::before {
+  background-image: url('halloweenNight2.png');
+  background-position: center;    
+  background-size: cover;            
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 0.9s ease-in-out;
+}
+
+body.dark-mode .heroPic::after {
+  background-image: none;   
+  opacity: 0;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 5vh;
+}
+
+.heroText h1, .heroText h2, .heroText p {
+  margin: 0;
+}
+
+.hero h1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.hero h2 {
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.hero p {
+  width: 16vw;
+  font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+.sHead {
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 6rem;
+}
+
+.sHead h2{
+  font-size: 1.5rem;
+}
+
+.sHead h3{
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.sHead p{
+  max-width: 40%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.selector {
+  display: grid;
+  gap: 3rem;
+  justify-content: center;   
+  grid-template-columns: 1fr; 
+}
+
+
+
+@media (min-width: 700px) {
+  .selector {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: calc(2 * 220px + 1 * 3rem); 
+    margin: 0 auto;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .selector {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: calc(3 * 220px + 2 * 3rem);
+  }
+}
+
+
+.selector a{
+  background-color: lavenderBlush;
+  border: 1px solid grey;
+  border-radius: 12px;
+  text-decoration: none;
+  position: relative;
+  overflow: visible;
+  display: flex;               
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  aspect-ratio: 1 / 1;       
+  width: 380px;              
+  max-width: 100%;
+  text-align: center;
+  font-weight: bold;
+
+  transition: background-position 0.7s , transform 0.4s ease, box-shadow 0.5s ease;
+  background-position: center left -100px; 
+  
+  
+}
+
+.selector a:hover {
+  cursor: pointer;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
+    url('pumpkin.png');                                
+  background-color: mistyrose;                        
+  background-position: center left;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+
+.selector a:hover .sButton {
+  color: white;
+}
+
+.selector h3 {
+  font-size: 2rem;
+}
+
+.selector p {
+  font-size: 1.2rem;
+  max-width: 80%;
+  padding-bottom: 15px;
+  
+}
+
+.sIcon {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+
+  width: 2rem;
+  height: 2rem;
+  font-size: 2.25rem;
+  padding: 1.5rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+   display: flex;               
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: navy;
+}
+
+.selector a:hover .sIcon {
+  color: black;
+  background-color: dodgerblue;
+  border-color: dodgerblue; 
+}
+
+.selectorButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 5%;
+  margin: 5% auto;
+}
+
+
+
+
+.sButton::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: dodgerblue;
+  z-index: 0;
+  transition: height 0.4s ease;
+  border-radius: inherit;
+  pointer-events: none;
+  will-change: height;
+}
+
+
+.sButton {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  padding: 6px 40px;
+  border-radius: 12px;
+  transition: 
+  background-color 0.3s ease,
+  box-shadow 0.3s ease,
+  max-height 0.3s ease,
+  opacity 0.3s ease,
+  transform 0.3s ease,
+  padding 0.3s ease;
+  align-self: flex-start;   
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.sButton > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sButton:hover::before {
+  height: 100%;
+}
+
+.sButton:hover {
+  color: black;                        
+  box-shadow: 0 0 10px rgba(30,144,255,.6);
+}
+
+.sButton span {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.portfolio {
+  background-color: linen;
+}
+
+.portfolio1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 70%;
+  padding: 3rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.portfolioH2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.portfolioH3 {
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.portfolioP {
+  font-size: 1.2rem;
+  max-width: 70%;
+  font-weight: bold;
+  max-width: 60ch;
+}
+
+
+
+.portfolio2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-position 0.7s , transform 0.4s ease, box-shadow 0.5s ease;
+  margin-bottom: 5%;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.portfolio2 img {
+  height: auto;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.project h3 {
+  font-size: 2rem;
+}
+
+.project p{
+  font-size: 1.2rem; 
+  max-width: 35%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#main-footer {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 24px 16px;
+}
+
+#main-footer h2 {
+  color: white;
+  font-size: 4rem;
+}
+
+#main-footer a {
+  text-decoration: none;
+  color: white;
+}
+
+#main-footer a:hover {
+  text-decoration: underline;
+  color: gray;
+  padding: 5px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.topnav2 {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #333;
+  color: #fff;
+  z-index: 1000;
+
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 5px;
+  border-radius: 50%;         
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+
+.topnav2 .icon {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 32px;            
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.topnav2 .panel {
+  position: absolute;
+  left: calc(100% + 8px);  
+  bottom: 0;
+
+  background: #222;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  width: 270px;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  overflow: hidden;
+  padding: 0;
+
+  transition:
+    max-height 300ms ease,
+    opacity 300ms ease,
+    transform 300ms ease,
+    padding 300ms ease;
+}
+
+.topnav2.open .panel {
+  max-height: 700px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  padding: 0;
+}
+
+
+.panel-body {
+  padding: 24px 32px;
+}
+
+
+.topnav2 .need-help {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 8px 24px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin: 24px 0;
+}
+
+.topnav2 .need-help:hover,
+.topnav2 .need-help:focus-visible {
+  text-decoration: underline;
+}
+
+
+.panel-header {
+  padding: 16px 48px;
+  background: linear-gradient(to right, royalblue 0%, cyan 100%);     
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.panel-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+    flex: 1;
+  text-align: center;
+  line-height: 1.2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.close-btn {
+   position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 2px 6px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.3);
+  opacity: 0.7;
+}
+
+.help-p {
+  padding: 8px 24px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: floralwhite;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+  .mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+  display: block;
+  z-index: 10;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+#navbar {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.heroPic {
+  background: url('hero1.png') center/cover no-repeat;
+  background-size: cover;
+  height: 60vh;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 5vh;
+}
+
+.heroText h1, .heroText h2, .heroText p {
+  margin: 0;
+}
+
+.hero h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin: 10px;
+}
+
+.hero h2 {
+  font-weight: bold;
+  font-size: 10vw;
+  margin: 10px;
+}
+
+.hero p {
+  width: 16vw;
+  font-size: 2rem;
+  margin: 10px;
+}
+
+.hero-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  gap: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sHead {
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.sHead h2{
+  font-size: 1.5rem;
+  margin-top: 35%;
+}
+
+.sHead h3{
+  font-size: 3.2rem;
+  font-weight: bold;
+  max-width: 100%;
+}
+
+.sHead p{
+  max-width: 75%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  padding-bottom: 6rem;
+}
+
+.selector {
+  display: grid;
+  gap: 6rem;
+  justify-content: center;   
+  grid-template-columns: 1fr; 
+  width: fit-content;
+  margin: 20px auto;
+}
+
+
+.selector a:hover {
+  cursor: pointer;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
+    url('pumpkin.png');                                
+  background-color: mistyrose;                        
+  background-position: center left;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+
+.selector a:hover .sButton {
+  color: white;
+}
+
+.selector h3 {
+  font-size: 2rem;
+}
+
+.selector p {
+  font-size: 1.2rem;
+  max-width: 80%;
+  padding-bottom: 15px;
+  
+}
+
+.sIcon {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+
+  width: 2rem;
+  height: 2rem;
+  font-size: 2.25rem;
+  padding: 1.5rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+   display: flex;               
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: navy;
+}
+
+.selector a:hover .sIcon {
+  color: black;
+  background-color: dodgerblue;
+  border-color: dodgerblue; 
+}
+
+.selectorButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 15%;
+  margin: 25% auto;
+}
+
+
+
+
+.sButton::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: dodgerblue;
+  z-index: 0;
+  transition: height 0.4s ease;
+  border-radius: inherit;
+  pointer-events: none;
+  will-change: height;
+}
+
+
+.sButton {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  padding: 6px 40px;
+  border-radius: 12px;
+  transition: 
+  background-color 0.3s ease,
+  box-shadow 0.3s ease,
+  max-height 0.3s ease,
+  opacity 0.3s ease,
+  transform 0.3s ease,
+  padding 0.3s ease;
+  align-self: flex-start;   
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.sButton > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sButton:hover::before {
+  height: 100%;
+}
+
+.sButton:hover {
+  color: black;                        
+  box-shadow: 0 0 10px rgba(30,144,255,.6);
+}
+
+.sButton span {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.portfolio {
+  background-color: linen;
+  text-align: center;
+}
+
+.portfolio1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+  
+  
+}
+
+.portfolioH2 {
+  text-align: center;
+  font-size: 4rem;
+  margin: 10% auto;
+}
+
+.portfolioH3 {
+  font-weight: bold;
+  font-size: 2rem;
+  max-width: 100%;
+  margin: 10%;
+  padding: 1rem;
+}
+
+.portfolioP {
+  font-size: 1.2rem;
+  max-width: 90%;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+
+
+.portfolio2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+  margin-bottom: 20%;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-position 0.7s , transform 0.4s ease, box-shadow 0.5s ease;
+  margin-bottom: 20%;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.portfolio2 img {
+  height: auto;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+}
+
+.project p{
+  font-size: 1.2rem; 
+  max-width: 75%;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+
+
+}
