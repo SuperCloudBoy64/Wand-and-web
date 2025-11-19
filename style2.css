@@ -357,7 +357,7 @@ body.dark-mode .heroPic {
 }
 
 body.dark-mode .heroPic::before {
-  background-image: url('halloweenNight2.png');
+  background-image: url('halloweenNight2.jpeg');
   background-position: center;    
   background-size: cover;            
   background-repeat: no-repeat;
@@ -435,15 +435,6 @@ body.dark-mode .heroPic::after {
   grid-template-columns: 1fr; 
 }
 
-
-
-@media (min-width: 700px) {
-  .selector {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: calc(2 * 220px + 1 * 3rem); 
-    margin: 0 auto;
-  }
-}
 
 
 @media (min-width: 1000px) {
@@ -905,6 +896,16 @@ body.dark-mode .heroPic::after {
 
 
 @media screen and (max-width: 700px) {
+  body {
+  font-family: 'Baskervville', Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  transition: background 0.6s ease-in-out, color 0.6s ease-in-out;
+}
+  
+  
+  
+  
   .mobile-container {
   max-width: 480px;
   margin: auto;
@@ -971,51 +972,46 @@ body.dark-mode .heroPic::after {
 
 .hero{
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .heroPic {
   background: url('hero1.png') center/cover no-repeat;
-  background-size: cover;
-  height: 60vh;
+  background-size: 100% auto;
   width: 100%;
   max-width: 100%;
   justify-content: center;
-  align-items: center;
-  margin: 0 auto;
   z-index: 0;
+  margin-top: -15vh;
+  padding: 0;
 }
 
 .heroText {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 5vh;
-}
-
-.heroText h1, .heroText h2, .heroText p {
-  margin: 0;
+  margin-top: -15vh;
 }
 
 .hero h1 {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 11vw;
   text-align: center;
-  margin: 10px;
 }
 
 .hero h2 {
   font-weight: bold;
-  font-size: 10vw;
+  font-size: 6vw;
   margin: 10px;
+  text-align: center;
 }
 
 .hero p {
-  width: 16vw;
-  font-size: 2rem;
+  width: 80%;
+  font-size: 5vw;
   margin: 10px;
+  text-align: center;
 }
 
 .hero-button {
@@ -1048,18 +1044,22 @@ body.dark-mode .heroPic::after {
 }
 
 .sHead h2{
-  font-size: 1.5rem;
-  margin-top: 35%;
+  font-size: 12vw;
+  margin-top: 15%;
+  border: 2px solid black;
+  border-radius: 1rem;
+  background-color: lavenderBlush;
 }
 
 .sHead h3{
-  font-size: 3.2rem;
+  font-size: 6vw;
   font-weight: bold;
   max-width: 100%;
+  margin-bottom: 2rem;
 }
 
 .sHead p{
-  max-width: 75%;
+  max-width: 90%;
   text-align: center;
   margin: 0 auto;
   font-size: 1.1rem;
@@ -1232,15 +1232,19 @@ body.dark-mode .heroPic::after {
 
 .portfolioH2 {
   text-align: center;
-  font-size: 4rem;
+  font-size: 15vw;
   margin: 10% auto;
+  border: 2px solid black;
+  border-radius: 1rem;
+  background-color: lavenderBlush;
+  padding: 1rem;
 }
 
 .portfolioH3 {
   font-weight: bold;
   font-size: 2rem;
   max-width: 100%;
-  margin: 10%;
+  margin-top: 10%;
   padding: 1rem;
 }
 
@@ -1248,7 +1252,7 @@ body.dark-mode .heroPic::after {
   font-size: 1.2rem;
   max-width: 90%;
   font-weight: bold;
-  padding: 2rem;
+  
 }
 
 
@@ -1294,6 +1298,43 @@ body.dark-mode .heroPic::after {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+#main-footer {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 24px 16px;
+}
+
+#main-footer h2 {
+  color: white;
+  font-size: 4rem;
+}
+
+#main-footer a {
+  text-decoration: none;
+  color: white;
+}
+
+#main-footer a:hover {
+  text-decoration: underline;
+  color: gray;
+  padding: 5px
+}
 
 
 }
