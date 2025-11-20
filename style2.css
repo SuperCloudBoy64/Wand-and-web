@@ -99,6 +99,26 @@ body.dark-mode .button:hover::after {
   transform: scale(1.03);
 }
 
+.social-icons .fa-facebook-f:hover { color: #1877F2; }  
+.social-icons .fa-github:hover { color: #6e5494;}   
+.social-icons .fa-instagram:hover { color: #E4405F; }  
+.social-icons .fa-linkedin-in:hover { color: #0077B5; } 
+.social-icons .fa-youtube:hover { color: #FF0000; }
+
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
+  font-size: 2rem;
+}
+
+
+
+
+
+
+
 
 
 
@@ -234,14 +254,13 @@ body.dark-mode .header::after {
     color 300ms ease,
     border-color 300ms ease,
     background-color 400ms ease,
-    padding-right 04s ease,
+    padding-right 0.4s ease,
     border 0.4s ease;
   transform-origin: left center;
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  display: inline-flex;
-  will-chnage: transform;
+  will-change: transform;
   backface-visibility: hidden;
   transform: scaleX(1) translateY(0); 
 }
@@ -280,15 +299,14 @@ body.dark-mode .header::after {
   border: none; 
   cursor: pointer; 
   color: midnightblue;
-  transition: transform .3s ease
-  box-shadow 0.3s ease;
   border-radius: 50%;
   padding: 20px;
-  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .icon-btn:hover {
   transform: translateY(-2px); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .icon-btn:focus-visible { 
@@ -308,19 +326,7 @@ body.dark-mode .header::after {
 
 
 
-.social-icons .fa-facebook-f:hover { color: #1877F2; }  
-.social-icons .fa-twitter:hover { color: #1DA1F2; }     
-.social-icons .fa-instagram:hover { color: #E4405F; }  
-.social-icons .fa-linkedin-in:hover { color: #0077B5; } 
-.social-icons .fa-youtube:hover { color: #FF0000; }
 
-.social-icons {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  justify-items: center;
-  font-size: 2rem;
-}
 
 
 
@@ -345,6 +351,7 @@ body.dark-mode .header::after {
   align-items: center;
   margin: 0 auto;
   z-index: 0;
+  position: relative; 
 }
 
 body.dark-mode .heroPic {
@@ -433,6 +440,7 @@ body.dark-mode .heroPic::after {
   gap: 3rem;
   justify-content: center;   
   grid-template-columns: 1fr; 
+  margin: 0 auto;
 }
 
 
@@ -459,8 +467,8 @@ body.dark-mode .heroPic::after {
   margin-bottom: 1rem;
 
   aspect-ratio: 1 / 1;       
-  width: 380px;              
-  max-width: 100%;
+  max-width: 380px;              
+  width: 100%;
   text-align: center;
   font-weight: bold;
 
@@ -611,6 +619,10 @@ body.dark-mode .heroPic::after {
   background-color: linen;
 }
 
+body.dark-mode .portfolio{
+  color: black;
+}
+
 .portfolio1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -723,7 +735,6 @@ body.dark-mode .heroPic::after {
 #main-footer a:hover {
   text-decoration: underline;
   color: gray;
-  padding: 5px
 }
 
 
@@ -900,7 +911,6 @@ body.dark-mode .heroPic::after {
   font-family: 'Baskervville', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   margin: 0;
-  transition: background 0.6s ease-in-out, color 0.6s ease-in-out;
 }
   
   
@@ -974,7 +984,6 @@ body.dark-mode .heroPic::after {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
 }
 
 .heroPic {
@@ -1018,8 +1027,8 @@ body.dark-mode .heroPic::after {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin: 0 auto;
-  gap: .5rem;
+  
+  
 }
 
 
@@ -1101,10 +1110,28 @@ body.dark-mode .heroPic::after {
 
 .selector p {
   font-size: 1.2rem;
-  max-width: 80%;
+  max-width: 90%;
   padding-bottom: 15px;
   
 }
+
+
+@media (min-width: 700px) {
+  .selector {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: calc(2 * 220px + 1 * 3rem); 
+    margin: 0 auto;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .selector {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: calc(3 * 220px + 2 * 3rem);
+  }
+}
+
 
 .sIcon {
   position: absolute;
@@ -1333,7 +1360,14 @@ body.dark-mode .heroPic::after {
 #main-footer a:hover {
   text-decoration: underline;
   color: gray;
-  padding: 5px
+}
+
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
+  font-size: 2rem;
 }
 
 
