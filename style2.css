@@ -440,18 +440,10 @@ body.dark-mode .heroPic::after {
   gap: 3rem;
   justify-content: center;   
   grid-template-columns: repeat(3, 1fr);
-    max-width: calc(3 * 220px + 2 * 3rem);
+  max-width: calc(3 * 220px + 2 * 3rem);
   margin: 0 auto;
 }
 
-
-
-@media (min-width: 1000px) {
-  .selector {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: calc(3 * 220px + 2 * 3rem);
-  }
-}
 
 
 .selector a{
@@ -1373,4 +1365,3 @@ body.dark-mode .portfolio{
 
 
 }
-
