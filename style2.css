@@ -623,19 +623,27 @@ body.dark-mode .portfolio{
 
 .portfolioH2 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 8rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  background-color: lavenderBlush;
+  margin: 10% auto;
+  padding: 1rem;
 }
 
 .portfolioH3 {
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .portfolioP {
-  font-size: 1.2rem;
-  max-width: 70%;
+  font-size: 1.6rem;
   font-weight: bold;
   max-width: 60ch;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5%;
 }
 
 
@@ -887,7 +895,7 @@ body.dark-mode .portfolio{
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   body {
   font-family: 'Baskervville', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
@@ -1340,7 +1348,7 @@ body.dark-mode .portfolio{
 }
 
 .project p{
-  font-size: 1.1rem; 
+  font-size: 1.2rem; 
   max-width: 75%;
   font-weight: bold;
   padding: 1rem;
